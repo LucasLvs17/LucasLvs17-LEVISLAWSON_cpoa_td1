@@ -16,7 +16,7 @@ public class Menu {
 		
 		do {
 			System.out.println("Choisir la table sur laquelle travailler");
-			System.out.println("1 : Abonnements");
+			System.out.println("1 : ");
 			System.out.println("2 : Clients");
 			System.out.println("3 : Revues");
 			System.out.println("4 : Périodicités");
