@@ -17,9 +17,11 @@ public class Menu {
 		do {
 			System.out.println("Choisir la table sur laquelle travailler");
 			System.out.println("1 : ");
-			System.out.println("2 : Clients");
-			System.out.println("3 : Revues");
-			System.out.println("4 : Périodicités");
+			System.out.println("2 : Categorie");
+			System.out.println("3 : Client");
+			System.out.println("4 : Commande");
+			System.out.println("5 : Ligne_commande");
+			System.out.println("6 : Produit");
 			choix1 = sc.nextInt();
 		}while(choix1 > 4);
 		
@@ -48,12 +50,24 @@ public class Menu {
 			System.out.println("1 : Ajouter une revue");
 			System.out.println("2 : Supprimer une revue");
 			System.out.println("3 : Changer la revue");
+		}else if(choix1 == 4){
+			System.out.println("Choisir la manipulation");
+			System.out.println("1 : Ajouter une périodicité");
+			System.out.println("2 : Supprimer une périodicité");
+			System.out.println("3 : Changer la périodicité");
+		}else if(choix1 == 5){
+			System.out.println("Choisir la manipulation");
+			System.out.println("1 : Ajouter une périodicité");
+			System.out.println("2 : Supprimer une périodicité");
+			System.out.println("3 : Changer la périodicité");
 		}else{
 			System.out.println("Choisir la manipulation");
 			System.out.println("1 : Ajouter une périodicité");
 			System.out.println("2 : Supprimer une périodicité");
 			System.out.println("3 : Changer la périodicité");
 		}
+		
+		
 		
 		
 		

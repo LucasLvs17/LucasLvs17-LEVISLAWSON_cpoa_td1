@@ -1,5 +1,5 @@
-package Main;
+/*package Main;
 
 public class Main {
 	
-}
+}*/
