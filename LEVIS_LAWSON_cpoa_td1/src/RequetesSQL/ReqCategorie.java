@@ -48,7 +48,8 @@ public class ReqCategorie{
 	}
 	
 	public static ArrayList<Categories> getAllCategorie() throws ClassNotFoundException, SQLException {
-    Connection conn=DBConnection.getDBConnection().getConnection();
+    Connexion laConnexion= new Connexion();
+    Connection co = laConnexion.CreateConnexion();
     Statement stm;
     stm = conn.createStatement();
     String sql = "Select * From Categorie";
