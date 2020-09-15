@@ -47,4 +47,19 @@ public class ReqCategorie{
 		}
 	}
 	
+	public static ArrayList<Categories> getAllCategorie() throws ClassNotFoundException, SQLException {
+    Connection conn=DBConnection.getDBConnection().getConnection();
+    Statement stm;
+    stm = conn.createStatement();
+    String sql = "Select * From Categorie";
+    ResultSet rst;
+    rst = stm.executeQuery(sql);
+    ArrayList<Categories> CategorieList = new ArrayList<>();
+    while (rst.next()) {
+        Categories categorie = new Categories(rst.getString("id_categorie"), rst.getString("titre"), rst.getString("visuel")"));
+        CategorieList.add(categorie);
+    }
+    return CategorieList;
+}
+	
 }
