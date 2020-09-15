@@ -1,14 +1,14 @@
 package Main;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
-import RequetesSQL.ReqCategorie;
+//import RequetesSQL.ReqCategorie;
 
 public class Main {
-public void menu_requete() {
+/*public void menu_requete() {
 		
 
-		System.out.println("Bienvenue ! ");
+		/*System.out.println("Bienvenue ! ");
 		Scanner sc = new Scanner(System.in);
 		int choix1, choix2;
 		boolean continuer = true;
@@ -33,5 +33,5 @@ public void menu_requete() {
 			System.out.println("4 : Changer le visuel");
 			
 			
-		}
-}}
+		}*/
+}//}

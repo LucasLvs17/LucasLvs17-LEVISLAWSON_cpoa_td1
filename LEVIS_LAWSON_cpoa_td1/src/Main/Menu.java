@@ -1,4 +1,4 @@
-/*package Main;
+package Main;
 import java.util.Scanner;
 
 import RequetesSQL.ReqCategorie;
@@ -31,10 +31,10 @@ public class Menu {
 			System.out.println("1 : Ajouter un abonnement");
 			System.out.println("2 : Supprimer un abonnement");
 			System.out.println("3 : Changer la date de début");
-			System.out.println("4 : Changer la date de fin");*//*
+			System.out.println("4 : Changer la date de fin");
 			
 			
-		}/*else if(choix1 == 2) {
+		}else if(choix1 == 2) {
 			System.out.println("Choisir la manipulation");
 			System.out.println("1 : Ajouter un client");
 			System.out.println("2 : Supprimer un client");
@@ -67,11 +67,11 @@ public class Menu {
 			System.out.println("3 : Changer la périodicité");
 		}
 		
-		*/
 		
 		
 		
 		
-/*	}
+		
+	}
 
-}*/
+}
