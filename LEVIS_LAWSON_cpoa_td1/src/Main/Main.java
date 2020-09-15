@@ -27,10 +27,10 @@ public void menu_requete() {
 		if(choix1 == 1) {
 			ReqCategorie req = new ReqCategorie();
 			System.out.println("Choisir la manipulation");
-			System.out.println("1 : Ajouter un abonnement");
-			System.out.println("2 : Supprimer un abonnement");
-			System.out.println("3 : Changer la date de début");
-			System.out.println("4 : Changer la date de fin");
+			System.out.println("1 : Ajouter une catégorie");
+			System.out.println("2 : Supprimer une catégorie");
+			System.out.println("3 : Changer le titre d'une catégorie");
+			System.out.println("4 : Changer le visuel");
 			
 			
 		}
