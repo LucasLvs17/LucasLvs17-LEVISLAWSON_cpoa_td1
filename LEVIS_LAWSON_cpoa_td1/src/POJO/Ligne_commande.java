@@ -6,6 +6,17 @@ public class Ligne_commande {
 	private int id_produit;
 	private int quantite;
 	private double tarif;
+	
+	
+	
+	public Ligne_commande(int id_commande, int id_produit, int quantite, double tarif) {
+		super();
+		this.id_commande = id_commande;
+		this.id_produit = id_produit;
+		this.quantite = quantite;
+		this.tarif = tarif;
+	}
+	
 	public int getId_commande() {
 		return id_commande;
 	}

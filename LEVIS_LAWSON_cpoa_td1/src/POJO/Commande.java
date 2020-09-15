@@ -8,6 +8,14 @@ public class Commande {
 	private int id_client;
 	
 	
+	
+	public Commande(int id_commande, LocalDate date_commande, int id_client) {
+		super();
+		this.id_commande = id_commande;
+		this.date_commande = date_commande;
+		this.id_client = id_client;
+	}
+	
 	public int getId_commande() {
 		return id_commande;
 	}

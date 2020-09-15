@@ -1,4 +1,4 @@
-/*package Factory;
+package Factory;
 import DAO.*;
 import DAO.Persistance;
 
@@ -20,8 +20,7 @@ public static DAOFactory getDAOfactory(Persistance cible) {
 	
 	public abstract CategorieDAO getCategorieDAO();
 	public abstract ClientDAO getClientDAO();
-	public abstract RevueDAO getRevueDAO();
-	public abstract PeriodiciteDAO getPeriodiciteDAO();
+	public abstract CommandeDAO getCommandeDAO();
+	public abstract ProduitDAO getProduitDAO();
 
 }
-*/

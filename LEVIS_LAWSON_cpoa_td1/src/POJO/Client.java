@@ -13,6 +13,23 @@ public class Client {
 	private String adr_ville;
 	private String adr_pays;
 	
+	
+	
+	public Client(int id_client, String nom, String prenom, String identifiant, String mot_de_passe, int adr_numero,
+			String adr_voie, String adr_code_postal, String adr_ville, String adr_pays) {
+		super();
+		this.id_client = id_client;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.identifiant = identifiant;
+		this.mot_de_passe = mot_de_passe;
+		this.adr_numero = adr_numero;
+		this.adr_voie = adr_voie;
+		this.adr_code_postal = adr_code_postal;
+		this.adr_ville = adr_ville;
+		this.adr_pays = adr_pays;
+	}
+	
 	public int getId_client() {
 		return id_client;
 	}

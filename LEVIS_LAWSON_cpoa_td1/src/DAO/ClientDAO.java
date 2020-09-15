@@ -1,4 +1,4 @@
-/*package DAO;
+package DAO;
 import POJO.*;
 
 public interface ClientDAO extends DAO<Client>{
@@ -8,4 +8,3 @@ public interface ClientDAO extends DAO<Client>{
 
 	public abstract Client getById(int id);
 }
-*/

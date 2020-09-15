@@ -1,15 +1,11 @@
 package Factory;
+import DAO.*;
 
-import DAO.CategorieDAO;
-import DAO.ClientDAO;
-import DAO.ProduitDAO;
-import DAO.CommandeDAO;
+public class LISTEMEMOIREDAOFactory extends DAOFactory{
 
-
-public class MYSQLDAOFactory {
 	@Override
 	public CategorieDAO getCategorieDAO() {
-		return MySQLCategorieDAO.getInstance();
+		return ListeMemoireCategorieDAO.getInstance();
 	}
 
 	@Override
@@ -29,5 +25,5 @@ public class MYSQLDAOFactory {
 		// TODO Stub de la méthode généré automatiquement
 		return null;
 	}
-
+	
 }

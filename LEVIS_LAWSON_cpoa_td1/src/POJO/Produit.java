@@ -8,6 +8,19 @@ public class Produit {
 	private double tarif;
 	private String visuel;
 	private int id_categorie;
+	
+	
+	
+	public Produit(int id_produit, String nom, String description, double tarif, String visuel, int id_categorie) {
+		super();
+		this.id_produit = id_produit;
+		this.nom = nom;
+		this.description = description;
+		this.tarif = tarif;
+		this.visuel = visuel;
+		this.id_categorie = id_categorie;
+	}
+	
 	public int getId_produit() {
 		return id_produit;
 	}
