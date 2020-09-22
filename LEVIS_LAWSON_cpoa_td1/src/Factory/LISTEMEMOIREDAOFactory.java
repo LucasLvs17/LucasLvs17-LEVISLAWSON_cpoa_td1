@@ -1,5 +1,6 @@
 package Factory;
 import DAO.*;
+import Liste_Memoire.ListeMemoireCategorieDAO;
 
 public class LISTEMEMOIREDAOFactory extends DAOFactory{
 
