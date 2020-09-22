@@ -11,4 +11,7 @@ public interface CategorieDAO extends DAO<Categorie>{
 
 	Categorie getById(int id);
 
+
+	ArrayList<Categorie> findAll();
+
 }
