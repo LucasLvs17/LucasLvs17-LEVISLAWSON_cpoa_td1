@@ -13,6 +13,10 @@ public class Categorie {
 		this.setVisuel(visuel);
 		
 	}
+	
+	public Categorie() {
+		
+	}
 
 
 	public int getIdCategorie() {

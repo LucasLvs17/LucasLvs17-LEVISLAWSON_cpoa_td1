@@ -8,7 +8,8 @@ import java.util.ArrayList;
 
 import DAO.*;
 import Main.Connexion;
-import POJO.Categorie;
+import POJO.*;
+
 
 public class MySQLCategorieDAO implements CategorieDAO{
 
