@@ -14,6 +14,7 @@ public class Categorie {
 		
 	}
 
+
 	public int getIdCategorie() {
 		return id_categorie;
 	}
