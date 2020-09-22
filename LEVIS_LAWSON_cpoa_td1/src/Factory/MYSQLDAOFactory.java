@@ -1,9 +1,10 @@
 package Factory;
 
 import DAO.*;
+import Factory.DAOFactory;
 import MySQL.MySQLCategorieDAO;
 
-public class MYSQLDAOFactory {
+public class MYSQLDAOFactory extends DAOFactory{
 	public CategorieDAO getCategorieDAO() {
 		return MySQLCategorieDAO.getInstance();
 	}
