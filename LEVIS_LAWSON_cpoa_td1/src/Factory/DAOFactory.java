@@ -1,8 +1,8 @@
 package Factory;
-import DAO.*;
-import DAO.Persistance;
 
-public class DAOFactory {
+import DAO.*;
+
+public abstract class DAOFactory {
 public static DAOFactory getDAOfactory(Persistance cible) {
 		
 		DAOFactory daoF = null;
