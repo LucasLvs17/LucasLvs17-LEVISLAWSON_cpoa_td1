@@ -3,7 +3,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 import DAO.*;
@@ -17,7 +16,7 @@ public class MySQLCategorieDAO implements CategorieDAO{
 	private ArrayList<Categorie> donnees;
 	
 private MySQLCategorieDAO() {
-		
+		//y a rien dedans
 	}
 	
 public static MySQLCategorieDAO getInstance() {
