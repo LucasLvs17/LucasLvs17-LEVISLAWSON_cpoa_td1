@@ -7,7 +7,7 @@ public class Client {
 	private String prenom;
 	private String identifiant;
 	private String mot_de_passe;
-	private int adr_numero;
+	private String adr_numero;
 	private String adr_voie;
 	private String adr_code_postal;
 	private String adr_ville;
@@ -15,7 +15,7 @@ public class Client {
 	
 	
 	
-	public Client(int id_client, String nom, String prenom, String identifiant, String mot_de_passe, int adr_numero,
+	public Client(int id_client, String nom, String prenom, String identifiant, String mot_de_passe, String adr_numero,
 			String adr_voie, String adr_code_postal, String adr_ville, String adr_pays) {
 		super();
 		this.id_client = id_client;
@@ -30,6 +30,10 @@ public class Client {
 		this.adr_pays = adr_pays;
 	}
 	
+	public Client() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getId_client() {
 		return id_client;
 	}
@@ -60,10 +64,10 @@ public class Client {
 	public void setMot_de_passe(String mot_de_passe) {
 		this.mot_de_passe = mot_de_passe;
 	}
-	public int getAdr_numero() {
+	public String getAdr_numero() {
 		return adr_numero;
 	}
-	public void setAdr_numero(int adr_numero) {
+	public void setAdr_numero(String adr_numero) {
 		this.adr_numero = adr_numero;
 	}
 	public String getAdr_voie() {
