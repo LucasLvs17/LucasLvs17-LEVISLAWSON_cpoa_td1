@@ -11,7 +11,7 @@ import Main.Connexion;
 import POJO.Client;
 import DAO.*;
 
-public class MySQLClientDAO {
+public class MySQLClientDAO implements ClientDAO{
 
 private static MySQLClientDAO instance;
 	

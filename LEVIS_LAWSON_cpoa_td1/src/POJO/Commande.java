@@ -16,6 +16,14 @@ public class Commande {
 		this.id_client = id_client;
 	}
 	
+	
+	
+	public Commande() {
+		// TODO Auto-generated constructor stub
+	}
+
+
+
 	public int getId_commande() {
 		return id_commande;
 	}
