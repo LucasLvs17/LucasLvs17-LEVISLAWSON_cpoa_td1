@@ -21,6 +21,10 @@ public class Produit {
 		this.id_categorie = id_categorie;
 	}
 	
+	public Produit() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getId_produit() {
 		return id_produit;
 	}

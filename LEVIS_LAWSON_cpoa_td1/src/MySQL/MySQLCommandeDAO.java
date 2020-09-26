@@ -82,7 +82,7 @@ public class MySQLCommandeDAO implements CommandeDAO{
 	public Commande getById(int id_commande) {
 		Connection laCo = Connexion.CreateConnexion();
 		try {
-			PreparedStatement requete = laCo.prepareStatement("SELECT * FROM COMMANDE WHERE if_commande = ?");
+			PreparedStatement requete = laCo.prepareStatement("SELECT * FROM COMMANDE WHERE id_commande = ?");
 			requete.setInt(1, id_commande);
 			ResultSet res = requete.executeQuery();
 			laCo.close();
