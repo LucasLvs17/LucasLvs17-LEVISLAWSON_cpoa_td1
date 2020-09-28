@@ -270,5 +270,21 @@ private static MySQLClientDAO instance;
 		return null;
 	}
 
+
+
+	@Override
+	public ArrayList<Client> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+	@Override
+	public Client getById(int id1, int id2) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
 
