@@ -1,10 +1,17 @@
 package Main;
 
+import MySQL.MySQLCategorieDAO;
+import POJO.*;
+
 //import java.util.Scanner;
 
 //import RequetesSQL.ReqCategorie;
 
 public class Main {
+	
+	MySQLCategorieDAO c = MySQLCategorieDAO.getInstance();
+	Categorie Cl = new Categorie(1, "TOUBA", "Manon");
+	
 /*public void menu_requete() {
 		
 

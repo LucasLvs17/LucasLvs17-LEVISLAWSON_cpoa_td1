@@ -28,7 +28,7 @@ public class MySQLCommandeDAO implements CommandeDAO{
 		try {
 			PreparedStatement requete = laCo.prepareStatement("insert into COMMANDE(id_commande, date_commande, id_client) value (?,?,?)");
 			requete.setInt(1,  c.getId_commande());
-			requete.setDate(2,  c.getDate_commande());
+			requete.setDate(2,  java.sql.Date.valueOf(c.getDate_commande()));
 			requete.setInt(3, c.getId_client());
 			int nbLigne = requete.executeUpdate();
 			
@@ -52,7 +52,7 @@ public class MySQLCommandeDAO implements CommandeDAO{
 		Connection laCo = Connexion.CreateConnexion();
 		try {
 			PreparedStatement requete = laCo.prepareStatement("update COMMANDE date_commande = ?, id_client = ? WHERE id_commande = ?");
-			requete.setDate(1, c.getDate_commande());
+			requete.setDate(1, java.sql.Date.valueOf(c.getDate_commande()));
 			requete.setInt(2, c.getId_client());
 			requete.executeUpdate();
 			laCo.close();
