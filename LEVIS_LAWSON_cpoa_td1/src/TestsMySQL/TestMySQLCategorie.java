@@ -61,5 +61,11 @@ public class TestMySQLCategorie {
 		ArrayList<Categorie> cBdd = instance.getByTitre("test");
 		assertTrue(cBdd.contains(c));
 	}
+	
+	@Test
+	public void testFindAll() {
+		ArrayList<Categorie> cBdd = instance.findAll();
+		assertTrue(cBdd.contains(c));
+	}
 
 }
