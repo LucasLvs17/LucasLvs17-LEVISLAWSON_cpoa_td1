@@ -7,9 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import DAO.*;
 import Main.Connexion;
-import POJO.Commande;
 import POJO.Produit;
 
 public class MySQLProduitDAO {
