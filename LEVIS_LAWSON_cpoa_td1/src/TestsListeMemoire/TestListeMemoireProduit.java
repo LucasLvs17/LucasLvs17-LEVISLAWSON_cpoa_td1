@@ -4,21 +4,20 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import java.util.ArrayList;
+import org.junit.Before;
+import org.junit.Test;
 
-import org.junit.*;
+import Liste_Memoire.ListeMemoireProduitDAO;
+import POJO.Produit;
 
-import Liste_Memoire.ListeMemoireCategorieDAO;
-import POJO.Categorie;
-
-public class TestListeMemoireCategorie {
+public class TestListeMemoireProduit {
 	
-	private ListeMemoireCategorieDAO instance = ListeMemoireCategorieDAO.getInstance();
-	private Categorie a;
+	private ListeMemoireProduitDAO instance = ListeMemoireProduitDAO.getInstance();
+	private Produit a;
 	
 	@Before
 	public void setUpBefore() {
-		a = new Categorie(1, "test", "test");
+		a = new Produit(1, "test", "test", 1, "test", 1);
 	}
 	
 	@Test
@@ -40,7 +39,7 @@ public class TestListeMemoireCategorie {
 		int idR = 1;
 		int idC = 2;
 
-		Categorie CategBdd = instance.getById(idC, idR);
+		Produit CategBdd = instance.getById(idC, idR);
 		assertNotNull(CategBdd);
 		instance.delete(a);
 	}
@@ -48,13 +47,11 @@ public class TestListeMemoireCategorie {
 	@Test
 	public void testUpdate() {
 		instance.create(a);
-		Categorie newA = new Categorie(1, "test", "test");
+		Produit newA = new Produit(1, "test", "test", 1, "test", 1);
 		instance.update(newA);
-		Categorie BddCateg = instance.getById(newA.getIdCategorie());
+		Produit BddCateg = instance.getById(newA.getId_produit());
 		assertEquals(newA, BddCateg);
 		instance.delete(a);
 	}
-	
-	
 
 }

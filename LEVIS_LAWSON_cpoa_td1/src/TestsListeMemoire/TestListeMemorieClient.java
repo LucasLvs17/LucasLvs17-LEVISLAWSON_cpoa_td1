@@ -4,21 +4,20 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import java.util.ArrayList;
+import org.junit.Before;
+import org.junit.Test;
 
-import org.junit.*;
+import Liste_Memoire.ListeMemoireClientDAO;
+import POJO.Client;
 
-import Liste_Memoire.ListeMemoireCategorieDAO;
-import POJO.Categorie;
-
-public class TestListeMemoireCategorie {
+public class TestListeMemorieClient {
 	
-	private ListeMemoireCategorieDAO instance = ListeMemoireCategorieDAO.getInstance();
-	private Categorie a;
+	private ListeMemoireClientDAO instance = ListeMemoireClientDAO.getInstance();
+	private Client a;
 	
 	@Before
 	public void setUpBefore() {
-		a = new Categorie(1, "test", "test");
+		a = new Client(1, "test", "test", "test", "test", "test", "test", "test", "test", "test");
 	}
 	
 	@Test
@@ -40,7 +39,7 @@ public class TestListeMemoireCategorie {
 		int idR = 1;
 		int idC = 2;
 
-		Categorie CategBdd = instance.getById(idC, idR);
+		Client CategBdd = instance.getById(idC, idR);
 		assertNotNull(CategBdd);
 		instance.delete(a);
 	}
@@ -48,10 +47,10 @@ public class TestListeMemoireCategorie {
 	@Test
 	public void testUpdate() {
 		instance.create(a);
-		Categorie newA = new Categorie(1, "test", "test");
-		instance.update(newA);
-		Categorie BddCateg = instance.getById(newA.getIdCategorie());
-		assertEquals(newA, BddCateg);
+		Client newC = new Client(1, "test", "test", "test", "test", "test", "test", "test", "test", "test");
+		instance.update(newC);
+		Client BddCateg = instance.getById(newC.getId_client());
+		assertEquals(newC, BddCateg);
 		instance.delete(a);
 	}
 	

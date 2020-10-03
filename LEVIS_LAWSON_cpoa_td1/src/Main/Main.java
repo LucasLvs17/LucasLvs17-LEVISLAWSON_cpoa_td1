@@ -1,7 +1,9 @@
 package Main;
 
+import DAO.Persistance;
 import MySQL.MySQLCategorieDAO;
 import POJO.*;
+import java.util.Locale;
 
 //import java.util.Scanner;
 
@@ -11,6 +13,17 @@ public class Main {
 	
 	MySQLCategorieDAO c = MySQLCategorieDAO.getInstance();
 	Categorie Cl = new Categorie(1, "TOUBA", "Manon");
+	
+	/*public void switchPersistance() {
+		//partie persistance
+		if(local_mode.isSelected()) {
+			System.out.println("Mode local activé");	
+			p = Persistance.LISTE_MEMOIRE;
+		}else {
+			System.out.println("Mode local désactivé");
+			p = Persistance.MYSQL;
+		}
+	}*/
 	
 /*public void menu_requete() {
 		
