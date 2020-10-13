@@ -74,7 +74,7 @@ public void remplirTable() {
 	}
 	
 @FXML
-public void creerProduit(){
+public void creerModele(){
 	// on récupère les champs
 	String titre = nom_lb.getText().trim();
 	String Description = desc_lb.getText().trim();
@@ -167,12 +167,11 @@ public void validerModif() {
 			setModeAjout();
 }
 
-@FXML
+/*@FXML
 public void creerModele(ActionEvent event) {
 	event.consume();
 	System.out.println("�a marche");
-}
-
+}*/
 
 @Override
 public void initialize(URL arg0, ResourceBundle arg1) {
