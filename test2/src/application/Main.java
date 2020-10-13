@@ -6,7 +6,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 
@@ -16,16 +16,17 @@ public class Main extends Application {
 		try {
 			URL fxmlURL=getClass().getResource("/sources/1.fxml");
 			FXMLLoader fxmlLoader = new FXMLLoader(fxmlURL);
-			Node root = fxmlLoader.load();
-			//BorderPane root = new BorderPane();
-			Scene scene = new Scene((VBox) root,600,400);
+			AnchorPane root = (AnchorPane) fxmlLoader.load();
+			//BorderPane root2 = new BorderPane();
+			Scene scene = new Scene(root,600,400);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
-			primaryStage.setTitle("Ma première fenêtre JavaFX");
-			primaryStage.show();
+			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+		primaryStage.setTitle("Ma première fenêtre JavaFX");
+		primaryStage.show();
 	}
 	
 	public static void main(String[] args) {
