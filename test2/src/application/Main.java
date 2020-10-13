@@ -16,9 +16,10 @@ public class Main extends Application {
 		try {
 			URL fxmlURL=getClass().getResource("/sources/1.fxml");
 			FXMLLoader fxmlLoader = new FXMLLoader(fxmlURL);
-			AnchorPane root = (AnchorPane) fxmlLoader.load();
+			//AnchorPane root = (AnchorPane) fxmlLoader.load();
+			Node root = fxmlLoader.load();
 			//BorderPane root2 = new BorderPane();
-			Scene scene = new Scene(root,600,400);
+			Scene scene = new Scene((VBox) root,600,400);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			
