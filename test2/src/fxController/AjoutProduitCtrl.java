@@ -18,7 +18,7 @@ import javafx.scene.control.*;
 public class AjoutProduitCtrl implements Initializable{
 	
 	@FXML private TextField nom_lb; 
-	@FXML private TextArea description;
+	@FXML private TextArea desc_lb;
 	@FXML private TextField tarif_lb;
 	@FXML private ChoiceBox<Categorie> cbxCategorie;
 //	@FXML private ComboBox<Periodicite> id_cb_period;
@@ -47,12 +47,12 @@ private int id_select;
 	public void setModeAjout(){
 		//id_btn_valider.setVisible(false);
 		//id_btn_annuler.setVisible(false);
-	/*	id_btn_creer.setVisible(true);
-		label_Produit.setText("Nouvelle Produit");
-		titre.clear(); 
-		id_tf_desc.clear();
-		id_tf_tarif.clear();
-		id_cb_period.getSelectionModel().select(-1);*/
+		btnCree.setVisible(true);
+		nom_lb.setText("Nouveau Produit");
+		nom_lb.clear(); 
+		desc_lb.clear();
+		tarif_lb.clear();
+		//id_cb_period.getSelectionModel().select(-1);
 	}
 	
 public void remplirTable() {
@@ -76,12 +76,12 @@ public void remplirTable() {
 public void creerProduit(){
 	// on récupère les champs
 	String titre = nom_lb.getText().trim();
-	String description = description.trim();
+	String Description = desc_lb.trim();
 	String tariflb = tarif_lb.getText().trim();
 	double tarif;
 	boolean tarifInvalide = false;
 	try {
-		tarif= Double.parseDouble(tarif_lb);
+		tarif= Double.parseDouble(tariflb);
 	}catch(NumberFormatException e) {
 		tarifInvalide = true;
 	}
@@ -90,7 +90,7 @@ public void creerProduit(){
 	if(titre.equals("") || titre == null) {
 		id_lb_custom.setTextFill(Color.RED);
 		id_lb_custom.setText("Veuillez renseigner un titre svp");
-	}else if(description.equals("") || description == null) {
+	}else if(Description.equals("") || Description == null) {
 		id_lb_custom.setTextFill(Color.RED);
 		id_lb_custom.setText("Veuillez renseigner la description svp");
 	}else if(tariflb.equals("") || tariflb == null) {
@@ -104,7 +104,7 @@ public void creerProduit(){
 		id_lb_custom.setText("Veuillez entrer un tarif correct svp");
 	}else {
 		// tout est correct, on insère dans la BdD
-		tarif = Double.parseDouble(tarif_lb);
+		tarif = Double.parseDouble(tariflb);
 		//String period = id_cb_period.getSelectionModel().getSelectedItem().toString();
 		//PeriodiciteDAO r = DAOFactory.getDAOfactory(p).getPeriodiciteDAO();
 		//int id = ((Periodicite) r.getByLibelle(period).get(0)).getId();
@@ -122,7 +122,7 @@ public void creerProduit(){
 public void validerModif() {
 	// on récupère les champs
 			String titre = nom_lb.getText().trim();
-			String description = description.trim();
+			String description = desc_lb.trim();
 			String tarifT = tarif_lb.getText().trim();
 			double tarif;
 			boolean tarifInvalide = false;

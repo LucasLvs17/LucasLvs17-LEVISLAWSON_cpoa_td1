@@ -39,7 +39,7 @@
                         <Label text="Catégorie :" GridPane.rowIndex="3" />
                         <TextField fx:id="nom_lb" GridPane.columnIndex="1" />
                         <TextField fx:id="tarif_lb" prefHeight="25.0" prefWidth="56.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <TextArea fx:id="description" prefHeight="56.0" prefWidth="500.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextArea fx:id="desc_lb" prefHeight="56.0" prefWidth="500.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <ChoiceBox fx:id="cbxCategorie" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <Label text="euros à l'unité" GridPane.columnIndex="3" GridPane.rowIndex="2" />
                         <Label text="Nom :" />
