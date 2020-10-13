@@ -76,7 +76,7 @@ public void remplirTable() {
 public void creerProduit(){
 	// on récupère les champs
 	String titre = nom_lb.getText().trim();
-	String Description = desc_lb.trim();
+	String Description = desc_lb.getText().trim();
 	String tariflb = tarif_lb.getText().trim();
 	double tarif;
 	boolean tarifInvalide = false;
@@ -122,7 +122,7 @@ public void creerProduit(){
 public void validerModif() {
 	// on récupère les champs
 			String titre = nom_lb.getText().trim();
-			String description = desc_lb.trim();
+			String description = desc_lb.getText().trim();
 			String tarifT = tarif_lb.getText().trim();
 			double tarif;
 			boolean tarifInvalide = false;
