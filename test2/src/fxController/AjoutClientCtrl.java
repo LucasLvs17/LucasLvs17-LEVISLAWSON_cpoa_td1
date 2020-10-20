@@ -146,7 +146,7 @@ private AjoutClientVue vue;
 		}
 		else {
 			ClientDAO c = DAOFactory.getDAOfactory(p).getClientDAO();
-			Client Cli = new Client(1, nom, prenom, no_rue, voie, code_postal, ville, pays, pays, pays);
+			Client Cli = new Client(1, nom, prenom, no_rue, voie, code_postal, ville, pays, identifiant, motdepasse);
 			c.create(Cli);
 			// message de confirmation
 			id_lb_custom.setTextFill(Color.ORANGE);
