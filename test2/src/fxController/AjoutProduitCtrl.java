@@ -99,7 +99,7 @@ public void creerModele(){
 		id_lb_custom.setText("Veuillez renseigner un tarif svp");
 	}else if(cbxCategorie.getSelectionModel().getSelectedItem() == null) {
 		id_lb_custom.setTextFill(Color.RED);
-		id_lb_custom.setText("Veuillez choisir la périodicité svp");
+		id_lb_custom.setText("Veuillez choisir la catégorie svp");
 	}else if(tarifInvalide == true) {
 		id_lb_custom.setTextFill(Color.RED);
 		id_lb_custom.setText("Veuillez entrer un tarif correct svp");
@@ -113,8 +113,8 @@ public void creerModele(){
 		//Produit Prod = new Produit(1, titre, desc, tarif, "pas d'image");
 		//s.create(Produit);
 		// message de confirmation
-		id_lb_custom.setTextFill(Color.BLACK);
-		id_lb_custom.setText("Produit " + titre + " ajoutée à la Bdd ");
+		id_lb_custom.setTextFill(Color.ORANGE);
+		id_lb_custom.setText("Produit " + titre + " ajouté à la Bdd ");
 	}
 	
 	remplirTable();
