@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="519.0" prefWidth="1307.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FxControleurs.AjoutClientCtrl">
+<VBox prefHeight="519.0" prefWidth="1307.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxController.AjoutClientCtrl">
   <children>
     <MenuBar prefWidth="1318.0" VBox.vgrow="NEVER">
       <menus>

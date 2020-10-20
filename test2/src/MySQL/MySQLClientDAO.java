@@ -8,6 +8,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import application.Connexion;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import POJO.Client;
 import DAO.*;
 
@@ -125,7 +127,7 @@ private static MySQLClientDAO instance;
 		}
 	}
 	
-	public ArrayList<Client> getByNomPrenom(String nom, String prenom){
+	public ObservableList<Client> getByNomPrenom(String nom, String prenom){
 		Connection laCo = Connexion.CreateConnexion();
 		try {
 			PreparedStatement requete = laCo.prepareStatement("SELECT * FROM CLIENT WHERE nom = ? AND prenom = ?");
@@ -133,7 +135,7 @@ private static MySQLClientDAO instance;
 			requete.setString(2, prenom);
 			ResultSet res = requete.executeQuery();
 			laCo.close();
-			ArrayList<Client> a = new ArrayList<Client>();
+			ObservableList<Client> a = FXCollections.observableArrayList();
 			Client c = new Client();
 			while(res.next()) {
 				c.setId_client(res.getInt("id_client"));
@@ -210,14 +212,14 @@ private static MySQLClientDAO instance;
 	}
 	
 	
-	public ArrayList<Client> getByVille(String v){
+	public ObservableList<Client> getByVille(String v){
 		Connection laCo = Connexion.CreateConnexion();
 		try {
 			PreparedStatement requete = laCo.prepareStatement("SELECT * FROM CLIENT WHERE adr_ville = ?");
 			requete.setString(1, v);
 			ResultSet res = requete.executeQuery();
 			laCo.close();
-			ArrayList<Client> a = new ArrayList<Client>();
+			ObservableList<Client> a = FXCollections.observableArrayList();
 			Client c = new Client();
 			while(res.next()) {
 				c.setId_client(res.getInt("id_client"));
@@ -272,8 +274,34 @@ private static MySQLClientDAO instance;
 
 
 
-	@Override
-	public ArrayList<Client> findAll() {
+	public ObservableList<Client> getAll() {
+		Connection laCo = Connexion.CreateConnexion();
+		try {
+			PreparedStatement requete = laCo.prepareStatement("SELECT distinct * FROM Client");
+			ResultSet res = requete.executeQuery();
+			ObservableList<Client> a = FXCollections.observableArrayList();
+			while(res.next()) {
+				Client c = new Client();
+				c.setId_client(res.getInt("id_client"));
+				c.setPrenom(res.getString("prenom"));
+				c.setNom(res.getString("nom"));
+				c.setAdr_numero(res.getString("no_rue"));
+				c.setAdr_voie(res.getString("voie"));
+				c.setAdr_code_postal(res.getString("code_postal"));
+				c.setAdr_ville(res.getString("ville"));
+				c.setAdr_pays(res.getString("pays"));
+				c.setIdentifiant(res.getString("identifiant"));
+				c.setMot_de_passe(res.getString("motdepasse"));
+				a.add(c);
+	}return a;
+	}catch(SQLException e){
+		System.out.println("Pb select" + e.getMessage());
+		return null;
+	}}
+
+
+
+	public Client getById(int id1, int id2) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -281,7 +309,7 @@ private static MySQLClientDAO instance;
 
 
 	@Override
-	public Client getById(int id1, int id2) {
+	public ObservableList<Client> OrderByNom() {
 		// TODO Auto-generated method stub
 		return null;
 	}

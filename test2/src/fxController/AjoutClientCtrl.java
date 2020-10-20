@@ -149,7 +149,7 @@ private AjoutClientVue vue;
 			Client Cli = new Client(1, nom, prenom, no_rue, voie, code_postal, ville, pays, pays, pays);
 			c.create(Cli);
 			// message de confirmation
-			id_lb_custom.setTextFill(Color.BLACK);
+			id_lb_custom.setTextFill(Color.ORANGE);
 			id_lb_custom.setText("Client " + nom + " " + prenom + " ajouté à la bdd");
 		}
 		
@@ -160,9 +160,9 @@ private AjoutClientVue vue;
 		this.vue.close();
 	}
 	
-	/*public void triParVille() {
+	public void triParVille() {
 
-		id_table.getItems().clear();
+		/*id_table.getItems().clear();
 		//on prépare les colonnes
 		id_col_id.setCellValueFactory(new PropertyValueFactory<>("id"));
 		id_col_nom.setCellValueFactory(new PropertyValueFactory<>("nom"));
@@ -198,14 +198,14 @@ private AjoutClientVue vue;
 		}catch(SQLException e){
 			System.out.println("Pb select" + e.getMessage());
 		}
-		id_table.getItems().addAll(a);
+		id_table.getItems().addAll(a);*/
 	}
 	
 	
 	
 	public void triParClient() {
 
-			id_table.getItems().clear();
+			/*id_table.getItems().clear();
 			//on prépare les colonnes
 			id_col_id.setCellValueFactory(new PropertyValueFactory<>("id"));
 			id_col_nom.setCellValueFactory(new PropertyValueFactory<>("nom"));
@@ -217,11 +217,11 @@ private AjoutClientVue vue;
 			id_col_pays.setCellValueFactory(new PropertyValueFactory<>("pays"));
 			MySQLClientDAO c = MySQLClientDAO.getInstance();
 			ObservableList<Client> a = c.OrderByNom();
-			id_table.getItems().addAll(a);
-		}*/
+			id_table.getItems().addAll(a);*/
+		}
 	
-	/*public void rechercheVille() {
-		String ville = id_recherche_ville.getText().trim();
+	public void rechercheVille() {
+		/*String ville = id_recherche_ville.getText().trim();
 		
 		if(ville.equals(null) || ville.equals("")) {
 			id_error_label.setTextFill(Color.RED);
@@ -245,12 +245,12 @@ private AjoutClientVue vue;
 				id_error_label.setText("Aucun résultat trouvé");
 			}
 			id_table.getItems().addAll(test);
-		}
-	}*/
+		}*/
+	}
 	
 	
-	/*public void rechercheNomPrenom() {
-		String nom = id_recherche_nom.getText().trim();
+	public void rechercheNomPrenom() {
+		/*String nom = id_recherche_nom.getText().trim();
 		String prenom = id_recherche_prenom.getText().trim();
 		
 		if(nom.equals(null) || nom.equals("")) {
@@ -280,11 +280,11 @@ private AjoutClientVue vue;
 				id_error_label.setText("Aucun résultat trouvé");
 			}
 			id_table.getItems().addAll(test);
-		}
+		}*/
 		
 		
 		
-	}*/
+	}
 	
 	
 	public void affiModifClient() {
@@ -300,7 +300,7 @@ private AjoutClientVue vue;
 		}else {
 			// on prépare l'interface 
 			Client c = ((Client) selection.get(0));
-			id_select = c.getId();
+			id_select = c.getId_client();
 			id_btn_creer.setVisible(false);
 			id_btn_valider.setVisible(true);
 			id_btn_annuler.setVisible(true);
@@ -312,11 +312,13 @@ private AjoutClientVue vue;
 			id_tf_codepost.setText(c.getAdr_code_postal());
 			id_tf_ville.setText(c.getAdr_ville());
 			id_tf_pays.setText(c.getAdr_pays());
+			id_tf_identifiant.setText(c.getIdentifiant());
+			id_tf_motdepasse.setText(c.getMot_de_passe());
 		}
 
 	}
 	
-	public void validerModif() {
+	public void validerModif() throws Exception {
 		String nom = id_tf_nom.getText().trim();
 		String prenom = id_tf_prenom.getText().trim();
 		String no_rue = id_tf_norue.getText().trim();
@@ -324,6 +326,8 @@ private AjoutClientVue vue;
 		String code_postal = id_tf_codepost.getText().trim();
 		String ville = id_tf_ville.getText().trim();
 		String pays = id_tf_pays.getText().trim();
+		String identifiant = id_tf_identifiant.getText().trim();
+		String motdepasse = id_tf_motdepasse.getText().trim();
 		// on vÃ©rifie que les champs ne sont pas vides
 		if(nom.equals("") || nom == null) {
 			id_lb_custom.setTextFill(Color.RED);
@@ -346,9 +350,15 @@ private AjoutClientVue vue;
 		}else if(pays.equals("") || pays == null) {
 			id_lb_custom.setTextFill(Color.RED);
 			id_lb_custom.setText("Veuillez entrer un pays correct svp");
+		}else if(identifiant.equals("")||identifiant == null) {
+			id_lb_custom.setTextFill(Color.RED);
+			id_lb_custom.setText("Veuillez entrer un identifiant correct svp");
+		}else if(motdepasse.equals("")||motdepasse == null) {
+			id_lb_custom.setTextFill(Color.RED);
+			id_lb_custom.setText("Veuillez entrer un mot de passe correct svp");
 		}else {
 			ClientDAO c = DAOFactory.getDAOfactory(p).getClientDAO();
-			Client Cli = new Client(id_select, nom, prenom, no_rue, voie, code_postal, ville, pays);
+			Client Cli = new Client(id_select, nom, prenom, no_rue, voie, code_postal, ville, pays, identifiant, motdepasse);
 			c.update(Cli);
 			// message de confirmation
 			id_lb_custom.setTextFill(Color.ORANGE);

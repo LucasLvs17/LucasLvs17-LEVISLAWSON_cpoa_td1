@@ -36,12 +36,12 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			URL fxmlURL=getClass().getResource("/sources/client.fxml");
+			URL fxmlURL=getClass().getResource("/sources/accueil.fxml");
 			FXMLLoader fxmlLoader = new FXMLLoader(fxmlURL);
 			//AnchorPane root = (AnchorPane) fxmlLoader.load();
 			Node root = fxmlLoader.load();
 			//BorderPane root2 = new BorderPane();
-			Scene scene = new Scene((VBox) root,600,400);
+			Scene scene = new Scene((VBox) root,1300,400);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			p = Persistance.MYSQL;
@@ -80,13 +80,13 @@ public void addClient() {
 	AjoutClientVue V = new AjoutClientVue(p);
 }
 
-/*public void addPeriod() {
+public void addCategorie() {
 
 	System.out.println(p);
 	AjoutPeriodVue V = new AjoutPeriodVue(p);
 }
 
-public void addAbo() {
+public void addCommande() {
 	AjoutAboVue V = new AjoutAboVue(p);
-}*/}
+}}
 
