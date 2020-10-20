@@ -83,10 +83,10 @@ public void addClient() {
 public void addCategorie() {
 
 	System.out.println(p);
-	AjoutPeriodVue V = new AjoutPeriodVue(p);
+	AjoutCategorieVue V = new AjoutCategorieVue(p);
 }
 
 public void addCommande() {
-	AjoutAboVue V = new AjoutAboVue(p);
+	AjoutCommandeVue V = new AjoutCommandeVue(p);
 }}
 
