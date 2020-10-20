@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import DAO.Persistance;
+import DAO.ProduitDAO;
 import Factory.DAOFactory;
 import FxVues.AjoutProduitVue;
 import POJO.Categorie;
@@ -18,6 +19,8 @@ import javafx.scene.control.*;
 
 public class AjoutProduitCtrl implements Initializable{
 	
+	private AjoutProduitVue vue;
+	
 	@FXML private TextField nom_lb; 
 	@FXML private TextArea desc_lb;
 	@FXML private TextField tarif_lb;
@@ -30,16 +33,12 @@ public class AjoutProduitCtrl implements Initializable{
 	
 private int id_select;
 	
-	private AjoutProduitVue vue;
-	//private Persistance p;
 	
-	public void setVue(AjoutProduitVue ajoutProduitVue /*, Persistance pr*/) {
-		vue = ajoutProduitVue;
-		//id_tf_desc.setWrapText(true);
-		//p = pr;
-		//PeriodiciteDAO r = DAOFactory.getDAOfactory(p).getPeriodiciteDAO();
-		//ObservableList<Periodicite> list = r.getAll(); 
-		//id_cb_period.setItems(list);
+	private Persistance p;
+	
+	public void setVue(AjoutProduitVue V , Persistance pr) {
+		vue = V;
+		p = pr;
 		remplirTable();
 		setModeAjout();
 	}
