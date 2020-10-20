@@ -9,11 +9,11 @@ public class LISTEMEMOIREDAOFactory extends DAOFactory{
 		return ListeMemoireCategorieDAO.getInstance();
 	}
 
-	/*@Override
+	@Override
 	public ClientDAO getClientDAO() {
 		// TODO Stub de la méthode généré automatiquement
 		return null;
-	}*/
+	}
 
 	@Override
 	public ProduitDAO getProduitDAO() {

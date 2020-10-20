@@ -2,6 +2,7 @@ package FxVues;
 
 import java.net.URL;
 
+import DAO.Persistance;
 /*import DAO.Persistance;*/
 import fxController.AjoutProduitCtrl;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +13,7 @@ import javafx.scene.layout.VBox;
 
 public class AjoutProduitVue extends Stage{
 	
-	public AjoutProduitVue(/*Persistance p*/) {
+	public AjoutProduitVue(Persistance p) {
 		try {
 			final URL fxmlURL= getClass().getResource("/sources/1.fxml");
 	        this.setTitle("Saisir une revue");

@@ -8,10 +8,10 @@ public class MYSQLDAOFactory extends DAOFactory{
 		return MySQLCategorieDAO.getInstance();
 	}
 
-	/*public ClientDAO getClientDAO() {
+	public ClientDAO getClientDAO() {
 		// TODO Stub de la méthode généré automatiquement
 		return null;
-	}*/
+	}
 
 	public ProduitDAO getProduitDAO() {
 		// TODO Stub de la méthode généré automatiquement
