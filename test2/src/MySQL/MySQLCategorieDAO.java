@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 import DAO.*;
 import application.Connexion;
+import javafx.collections.ObservableList;
 import POJO.*;
 
 
@@ -124,7 +125,7 @@ public ArrayList<Categorie> getByIdCategorie(int idC) {
 	
 }
 
-public ArrayList<Categorie> getByTitre(String titre) {
+public ObservableList<Categorie> getByTitre(String titre) {
 	Connection laCo = Connexion.CreateConnexion();
 	try {
 		PreparedStatement requete = laCo.prepareStatement("SELECT * FROM Produit WHERE id_produit = ?");
@@ -139,7 +140,7 @@ public ArrayList<Categorie> getByTitre(String titre) {
 			r.setVisuel(res.getString("visuel"));
 			a.add(r);
 		}
-		return a;
+		return (ObservableList<Categorie>) a;
 		
 	}catch(SQLException e){
 		System.out.println("Pb select" + e.getMessage());
@@ -183,6 +184,14 @@ public Categorie getById(int id1, int id2) {
 public ArrayList<Categorie> findAll() {
 	return (ArrayList<Categorie>) this.donnees;
 }
+
+@Override
+public ObservableList getAll() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+
 
 
 
