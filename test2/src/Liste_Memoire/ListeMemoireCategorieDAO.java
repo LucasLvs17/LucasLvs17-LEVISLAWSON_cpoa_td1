@@ -4,6 +4,7 @@ import java.util.List;
 
 import DAO.CategorieDAO;
 import POJO.Categorie;
+import javafx.collections.ObservableList;
 
 public class ListeMemoireCategorieDAO implements CategorieDAO{
 
@@ -93,6 +94,18 @@ public class ListeMemoireCategorieDAO implements CategorieDAO{
 
 	@Override
 	public Categorie getById(int id1, int id2) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ObservableList getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ObservableList getByTitre(String titre) {
 		// TODO Auto-generated method stub
 		return null;
 	}
