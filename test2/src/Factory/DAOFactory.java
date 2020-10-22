@@ -20,8 +20,9 @@ public static DAOFactory getDAOfactory(Persistance cible) {
 	
 	public abstract CategorieDAO getCategorieDAO();
 	public abstract ClientDAO getClientDAO();
-	//public abstract CommandeDAO getCommandeDAO();
+	public abstract CommandeDAO getCommandeDAO();
 	public abstract ProduitDAO getProduitDAO();
+
 
 }
 

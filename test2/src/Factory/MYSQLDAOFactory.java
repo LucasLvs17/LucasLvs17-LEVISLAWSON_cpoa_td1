@@ -18,10 +18,10 @@ public class MYSQLDAOFactory extends DAOFactory{
 		return null;
 	}
 
-	/*public CommandeDAO getCommandeDAO() {
+	public CommandeDAO getCommandeDAO() {
 		// TODO Stub de la méthode généré automatiquement
 		return null;
-	}*/
+	}
 
 }
 

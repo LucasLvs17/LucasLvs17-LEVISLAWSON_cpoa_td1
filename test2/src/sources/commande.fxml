@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="519.0" prefWidth="1307.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxController.AjoutCommandeCtrl">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="Produits">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Voir tout" />
+                  <MenuItem mnemonicParsing="false" text="Ajouter" />
+               </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Clients">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Voir tout" />
+                  <MenuItem mnemonicParsing="false" text="Ajouter" />
+               </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Commandes">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Voir tout" />
+                  <MenuItem mnemonicParsing="false" text="Ajouter" />
+               </items>
+        </Menu>
+            <Menu mnemonicParsing="false" text="Categories">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Voir tout" />
+                  <MenuItem mnemonicParsing="false" text="Ajouter" />
+               </items>
+            </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="426.0" prefWidth="989.0" VBox.vgrow="ALWAYS">
+         <children>
+            <TableView fx:id="id_table" layoutX="11.0" layoutY="17.0" prefHeight="406.0" prefWidth="664.0">
+              <columns>
+                  <TableColumn fx:id="id_col_commande" prefWidth="175.0" text="Id commande" />
+                <TableColumn fx:id="id_col_client" minWidth="1.0" prefWidth="183.0" text="Client" />
+                <TableColumn fx:id="id_col_date_com" prefWidth="305.0" text="Date commande" />
+              </columns>
+            </TableView>
+            <GridPane alignment="CENTER" layoutX="699.0" layoutY="17.0" prefHeight="147.0" prefWidth="243.0" style="-fx-border-color: grey;">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#setModeAjout" text="Ajouter" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Button mnemonicParsing="false" onAction="#affiModifCom" text="Modifier" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Button mnemonicParsing="false" text="Supprimer" onAction="#supprCom" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+               </children>
+            </GridPane>
+            <GridPane layoutX="699.0" layoutY="176.0" prefHeight="147.0" prefWidth="243.0" style="-fx-border-color: grey;">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="369.0" minWidth="10.0" prefWidth="369.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="186.0" minWidth="0.0" prefWidth="0.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#triParClient" text="Trier par client" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#triParId" text="Trier par Id" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <CheckBox fx:id="id_cb_en_cours" mnemonicParsing="false" onAction="#remplirTable" text="Commandes en cours seulement" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+            <GridPane layoutX="698.0" layoutY="331.0" prefHeight="92.0" prefWidth="243.0" style="-fx-border-color: grey;">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="82.0" minWidth="10.0" prefWidth="69.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="127.0" minWidth="10.0" prefWidth="119.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="91.0" minWidth="10.0" prefWidth="56.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="108.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="94.0" minHeight="10.0" prefHeight="59.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Rechercher : " GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label text="Date &gt; à :" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" onAction="#rechercheDate" text="OK" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <DatePicker fx:id="id_recherche_debut" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+            <VBox layoutX="961.0" layoutY="17.0" prefHeight="406.0" prefWidth="324.0" style="-fx-border-color: grey;">
+               <children>
+                  <FlowPane alignment="CENTER" prefHeight="72.0" prefWidth="322.0">
+                     <children>
+                        <Label fx:id="label_commande" alignment="CENTER" text="Nouvelle commande :" />
+                     </children>
+                  </FlowPane>
+                  <GridPane prefHeight="242.0" prefWidth="322.0">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="159.0" minWidth="10.0" prefWidth="159.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="102.0" minWidth="10.0" prefWidth="55.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label text="Client : " />
+                        <Label text="Produit :" GridPane.rowIndex="1" />
+                        <Label text="Date commande :" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="id_cb_client" prefWidth="150.0" GridPane.columnIndex="1" />
+                        <ComboBox fx:id="id_cb_produit" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <DatePicker fx:id="id_dp_date" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     </children>
+                  </GridPane>
+                  <FlowPane alignment="CENTER" prefHeight="86.0" prefWidth="322.0">
+                     <children>
+                        <Button fx:id="id_btn_valider" mnemonicParsing="false" onAction="#validerModif" text="Valider" />
+                        <Button fx:id="id_btn_creer" mnemonicParsing="false" onAction="#creerCom" text="Créer" />
+                        <Button fx:id="id_btn_annuler" mnemonicParsing="false" onAction="#annulerModif" text="Annuler" />
+                     </children>
+                  </FlowPane>
+                  <FlowPane alignment="CENTER" prefHeight="77.0" prefWidth="322.0">
+                     <children>
+                        <Label fx:id="id_lb_custom" />
+                     </children>
+                  </FlowPane>
+               </children>
+            </VBox>
+            <Button layoutX="32.0" layoutY="440.0" mnemonicParsing="false" onAction="#retourAccueil" text="Retour à l'accueil" />
+            <Label fx:id="id_error_label" layoutX="474.0" layoutY="444.0" prefHeight="17.0" prefWidth="376.0" />
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>

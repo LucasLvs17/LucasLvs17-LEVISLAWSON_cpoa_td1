@@ -21,11 +21,11 @@ public class LISTEMEMOIREDAOFactory extends DAOFactory{
 		return null;
 	}
 
-	/*@Override
+	@Override
 	public CommandeDAO getCommandeDAO() {
 		// TODO Stub de la méthode généré automatiquement
 		return null;
-	}*/
+	}
 	
 }
 

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 import DAO.*;
 import application.Connexion;
+import javafx.collections.ObservableList;
 import POJO.Commande;
 
 public class MySQLCommandeDAO implements CommandeDAO{
@@ -100,7 +101,7 @@ public class MySQLCommandeDAO implements CommandeDAO{
 	}
 
 	
-	public ArrayList<Commande> getByIdCommande(int id_commande){
+	public ObservableList<Commande> getByIdCommande(int id_commande){
 		Connection laCo = Connexion.CreateConnexion();
 		try {
 			PreparedStatement requete = laCo.prepareStatement("SELECT * FROM COMMANDE WHERE id_commande = ?");
@@ -115,14 +116,14 @@ public class MySQLCommandeDAO implements CommandeDAO{
 				c.setId_client(res.getInt("id_client"));
 				a.add(c);
 			}
-			return a;
+			return (ObservableList<Commande>) a;
 		}catch(SQLException e){
 			System.out.println("Pb select" + e.getMessage());
 			return null;
 		}
 	}
 
-	public ArrayList<Commande> getByDateDebut(LocalDate date_commande){
+	public ObservableList<Commande> getByDateDebut(LocalDate date_commande){
 		Connection laCo = Connexion.CreateConnexion();
 		try {
 			PreparedStatement requete = laCo.prepareStatement("SELECT * FROM Abonnement WHERE date_debut = ?");
@@ -137,7 +138,7 @@ public class MySQLCommandeDAO implements CommandeDAO{
 				c.setId_commande(res.getInt("id_commande"));
 				a.add(c);
 			}
-			return a;
+			return (ObservableList<Commande>) a;
 			
 		}catch(SQLException e){
 			System.out.println("Pb select" + e.getMessage());
@@ -146,7 +147,7 @@ public class MySQLCommandeDAO implements CommandeDAO{
 	}
 
 	
-	public ArrayList<Commande> getByIdClient(int id_client){
+	public ObservableList<Commande> getByIdClient(int id_client){
 		Connection laCo = Connexion.CreateConnexion();
 		try {
 			PreparedStatement requete = laCo.prepareStatement("SELECT * FROM COMMANDE WHERE id_commande = ?");
@@ -161,11 +162,41 @@ public class MySQLCommandeDAO implements CommandeDAO{
 				c.setDate_commande(res.getDate("date_commande").toLocalDate());
 				a.add(c);
 			}
-			return a;
+			return (ObservableList<Commande>) a;
 		}catch(SQLException e){
 			System.out.println("Pb select" + e.getMessage());
 			return null;
 		}
+	}
+
+	@Override
+	public ObservableList getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ObservableList getEnCours() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ObservableList getByDate(LocalDate date) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ObservableList getAllByClient() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ObservableList getAllById() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	
