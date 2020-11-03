@@ -4,3 +4,5 @@ https://trello.com/invite/b/PzNPTjEx/60dc9fc1383825d00e26166e1dfba2db/t%C3%A2che
 
 
 Marche pas: ProduitVue quand on passe par l'accueil alors que ça marche quand on le passe par le main en premier.
+
+Répartition des tâches sur le trello
